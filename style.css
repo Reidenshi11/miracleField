@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+}
+
+:root {
+    --color-fon: rgb(250, 250, 250);
+    --color-area: rgb(138, 236, 182);
+}
+
+.body_container {
+    display: flex;
+    /* flex-direction: column; */
+    background: var(--color-fon);
+    width: 100%;
+    height: 900px;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .button_reset {
+    height: 80px;
+    width: 80px;
+    background: white;
+    position: absolute;
+    margin-right: 90%;
+    margin-top: 10px;
+} */
+
+input[type='checkbox'] {
+    position: absolute;
+    margin-right: 90%;
+    margin-left: 40px;
+    margin-top: 40px;
+    height: 60px;
+    width: 60px;
+    /* top: 50%;
+    left: 50%; */
+    -webkit-appearance: none;
+    box-shadow: 
+    -10px -10px 35px rgba(91, 202, 16, 0.5),
+    10px 10px 15px rgba(13, 207, 6, 0.12);
+   
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 8px solid #04c22494;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+input[type='checkbox']::after {
+    font-family: FontAwesome;
+    content: "\262D"; 
+    /* content: "\2706";  */
+    color: #3bd315; /*ON/OFF icob Unicode*/
+    font-size: 50px;
+    padding-bottom: 7px;
+    padding-left: 4px;
+}
+
+input[type='checkbox']:checked {
+    box-shadow: 
+    -10px -10px 45px rgba(97, 224, 38, 0.5),
+    10px 10px 45px rgba(228, 55, 12, 0.12),
+    inset -10px -10px 15px rgba(233, 40, 40, 0.5),
+    inset 10px 10px 15px rgba(197, 33, 5, 0.12)
+}
+
+input[type='checkbox']:checked::after {
+    /* color: #15e38a; */
+    color: #ca1508;
+    /* color: #08ca22; */
+}
+
+.word_container {
+    display: grid;
+    padding: 5px 10px;
+    gap: 10px;
+    margin-top: 20px;
+    display: flex;
+    width: 910px;
+    height: 100px;
+    /* background: blue; */
+    justify-content: center;
+    align-items: center;
+}
+
+.word {
+    /* margin-top: 20px; */
+    display: flex;
+    height: 80px;
+    width: 54px;
+    background: #fff;   
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 4px 4px 5px 0px rgb(13, 13, 14); */
+    box-shadow: 0px 0px 10px 6px var(--color-area);
+    font-size: 55px;
+}
+
+.word_over {
+    /* margin-top: 20px; */
+    display: flex;
+    height: 80px;
+    width: 54px;
+    background: #fff;   
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 4px 4px 5px 0px rgb(13, 13, 14); */
+    box-shadow: 0px 0px 10px 7px rgba(22, 141, 11, 0.7);
+    font-size: 55px;
+}
+
+.word span {
+    font-size: 80px;
+}
+
+.word_fontSize {
+    font-size: 0px;
+    
+}
+
+.word:hover{
+    cursor: pointer;
+}
+
+/* .word:active{
+    cursor: pointer;
+    /* transform: rotateY(180deg); 
+    transform: rotateY(180deg);
+    transition: transform 2s ease-in-out;
+} */
+
+.word_anim {
+    cursor: pointer;
+    transform: rotateY(180deg);
+    transition: transform 2s ease-in-out;
+    /* transform: scaleX(1); */
+    box-shadow: 0px 0px 10px 10px rgba(194, 34, 6, 0.7);
+}
+
+.word_reverse {
+    transform: rotateY(180deg);
+}
+
+.riddle {
+    background: var(--color-area);
+    /* background-color:; */
+    margin-top: 20px;
+    height: 300px;
+    width: 840px;
+    font-size: 50px;
+    text-align: justify;
+}
+
+
+.choise_container {
+    /* display: grid; */
+    gap: 10px;
+    margin-top: 60px;
+    padding: 10px;
+    display: flex;
+    width: 910px;
+    height: 100px;
+    background: blue;
+    justify-content: center;
+    align-items: center;
+    background: chocolate;
+}
+
+.choise {
+    /* margin-top: 20px; */
+    display: flex;
+    height: 80px;
+    width: 80px;
+    background: #fff;   
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 5px 0px rgb(13, 13, 14);
+    /* box-shadow: 0px 5px 10px 0px rgba(0, 255, 255, 0.7); */
+    font-size: 80px;
+    cursor: not-allowed;
+}
+
+.choise:hover {
+    cursor: pointer;
+}
+
+.choise:active {
+    cursor: pointer;
+    box-shadow: inset  4px 4px 5px 0px rgb(13, 13, 14);
+}
+
+.choise_over {
+    display: flex;
+    height: 80px;
+    width: 80px;
+    background: #fff;   
+    filter: brightness(90%);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 4px 4px 5px 0px rgb(13, 13, 14);
+    font-size: 80px;
+    cursor: not-allowed;
+}
+
+.letters_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 40px;
+    width: 820px;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    /* background: rgb(122, 67, 4); */
+}
+
+.letter {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    background: #fff;   
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 4px 4px 5px 0px rgb(13, 13, 14); */
+    box-shadow: 0px 0px 10px 7px var(--color-area);
+    font-size: 55px;
+}
+
+.letter:hover {
+    cursor: pointer;
+}
+
+.letter:active {
+    cursor: pointer;
+    box-shadow: inset  4px 4px 5px 0px rgb(13, 13, 14);
+}
+
+.letter_over {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    background: #fff;   
+    filter: brightness(90%);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 4px 4px 5px 0px rgb(13, 13, 14);
+    font-size: 55px;
+    cursor: not-allowed;
+}
+
+.letter_over_right {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    background: #fff;   
+    filter: brightness(90%);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 4px 4px 5px 0px rgb(13, 14, 13),
+                 0px 0px 10px 9px rgba(10, 167, 18, 0.7);
+    font-size: 55px;
+    cursor: not-allowed;
+}
+
+.letter_over_unright {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    background: #fff;   
+    filter: brightness(90%);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 4px 4px 5px 0px rgb(13, 14, 13),
+                 0px 0px 10px 9px rgba(136, 36, 11, 0.7);
+    font-size: 55px;
+    cursor: not-allowed;
+}
+
+.invisible {
+    visibility: hidden;
+}
