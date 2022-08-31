@@ -22,6 +22,14 @@
     align-items: center;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 /* .button_reset {
     height: 80px;
     width: 80px;
@@ -85,8 +93,9 @@ input[type='checkbox']:checked::after {
     gap: 10px;
     margin-top: 20px;
     display: flex;
-    width: 910px;
-    height: 100px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
     /* background: blue; */
     justify-content: center;
     align-items: center;
@@ -156,10 +165,13 @@ input[type='checkbox']:checked::after {
     background: var(--color-area);
     /* background-color:; */
     margin-top: 20px;
-    height: 300px;
-    width: 840px;
-    font-size: 50px;
-    text-align: justify;
+    /* max-height: 400px; */
+    height: auto;
+    max-width: 100vh;
+    width: auto;
+    /* font-size: 50px; */
+    font-size: max(3em, min(calc(100vw * 3 / (840 / 3 / 2)), 6em));
+    text-align: start;
 }
 
 
@@ -221,8 +233,9 @@ input[type='checkbox']:checked::after {
     gap: 10px;
     padding: 10px;
     margin-top: 40px;
-    width: 820px;
-    height: 250px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
     justify-content: center;
     align-items: center;
     /* background: rgb(122, 67, 4); */
@@ -296,4 +309,50 @@ input[type='checkbox']:checked::after {
 
 .invisible {
     visibility: hidden;
+}
+
+@media (max-width: 900px) {
+    /* .riddle {
+        /* min-width: 400px;
+        max-width: 700px; 
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    } */
+    .main {
+        max-width: 400px;
+        width: auto;
+    }
+
+    .letters_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .riddle {
+        max-width: 90%;
+        width: auto;
+        font-size: 30px;
+        text-align: start;
+    }
+
+    .letter {
+        height: 40px;
+        width: 40px;
+        font-size: 35px;
+    }
+
+    input[type='checkbox'] {
+    margin-left: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .word {
+        height: 60px;
+        width: 35px;
+        font-size: 35px;
+    }
 }
