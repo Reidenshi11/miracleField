@@ -349,6 +349,14 @@ input[type='checkbox']:checked::after {
         font-size: 35px;
     }
 
+    .letter_over_right {
+        font-size: 35px;
+    }
+    
+    .letter_over_unright {
+        font-size: 35px;
+    }
+
     input[type='checkbox'] {
     margin-left: 80px;
     }
