@@ -25,9 +25,12 @@
 .main {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
 }
 
 /* .button_reset {
@@ -92,9 +95,11 @@ input[type='checkbox']:checked::after {
     padding: 5px 10px;
     gap: 10px;
     margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
     display: flex;
     flex-flow: row wrap;
-    max-width: 100%;
+    max-width: 90%;
     width: auto;
     height: auto;
     /* background: blue; */
@@ -327,6 +332,12 @@ input[type='checkbox']:checked::after {
         width: auto;
     }
 
+    .word {
+        height: 50px;
+        width: 30px;
+        /* font-size: 25px; */
+    }
+
     .letters_container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -346,14 +357,20 @@ input[type='checkbox']:checked::after {
     }
 
     .letter_over {
+        height: 40px;
+        width: 40px;
         font-size: 35px;
     }
 
     .letter_over_right {
+        height: 40px;
+        width: 40px;
         font-size: 35px;
     }
     
     .letter_over_unright {
+        height: 40px;
+        width: 40px;
         font-size: 35px;
     }
 
