@@ -127,7 +127,7 @@ input[type='checkbox']:checked::after {
     align-items: center;
     /* box-shadow: 4px 4px 5px 0px rgb(13, 13, 14); */
     box-shadow: 0px 0px 10px 7px rgba(22, 141, 11, 0.7);
-    font-size: 55px;
+    font-size: 40px;
 }
 
 .word span {
@@ -342,6 +342,10 @@ input[type='checkbox']:checked::after {
     .letter {
         height: 40px;
         width: 40px;
+        font-size: 35px;
+    }
+
+    .letter_over {
         font-size: 35px;
     }
 
