@@ -145,23 +145,36 @@ console.log
 
 //////////Открывание ячеек по нажатию мыши//////////////////////////////////
 
-WORD_BLOCK_ALL.forEach(button => {
-    button.addEventListener('click', function(){
-        button.classList.add('word_anim');
-        let classAss = function removeClass(){
-            button.classList.remove('word_fontSize');
-        }
-        let classAssFuck = function removeClass(){
-            button.classList.remove('word_anim');
-        }
-        let addAss = function removeClass(){
-            button.classList.add('word_fontSize');
-        }
-        setTimeout(classAss, 1600);
-        setTimeout(classAssFuck, 1500);
-        setTimeout(addAss, 4000);
-    })
-})
+// function disableBtn(f) {
+//     this.removeEventListener('click', f);
+// }
+
+////// Тестовая /////////////////////////////////////
+
+function classWord(){
+    let btn = this;
+    btn.classList.add('word_anim');
+    let classAss = function removeClass(){
+        btn.classList.remove('word_fontSize')
+    };
+    let classAssFuck = function removeClass(){
+        btn.classList.remove('word_anim')
+    };
+    let addAss = function removeClass(){
+        btn.classList.add('word_fontSize')
+    };
+    
+    setTimeout(classAss, 1600);
+    setTimeout(classAssFuck, 1500);
+    setTimeout(addAss, 4000);
+
+    btn.removeEventListener('click', classWord);
+}
+
+// WORD_BLOCK_ALL.forEach(button => {
+//     button.addEventListener('click', classWord);
+// })
+
 
 /////////////////////////////////////////////////////////////////////////////
 //////////Функция нажатия мышью цифр и заглушка их////////////////////////////
@@ -179,23 +192,29 @@ WORD_CHOISE_BLOCK_ALL.forEach(button => {
 
 //////////Функция нажатия мышью букв и заглушка их////////////////////////////
 
+function classLetter() {
+    let letterCard = this;
+    letterCard.classList.add('letter_over');
+    letterCard.classList.remove('letter');
+    pushChoise = letterCard.textContent;
+    console.log('pushChoise:', pushChoise);
+    console.log(typeof pushChoise);
+    pushButtonLetter(pushChoise);
+    if (right == true) {
+        letterCard.classList.add('letter_over_right');
+        right = 0;
+        letterCard.removeEventListener('click', classLetter);
+    }
+    else {
+        letterCard.classList.add('letter_over_unright');
+        right = 0;
+        letterCard.removeEventListener('click', classLetter);
+    };
+}
+
+
 WORD_LETTER_BLOCK_ALL.forEach(button => {
-    button.addEventListener('click', function(){
-        button.classList.add('letter_over');
-        button.classList.remove('letter');
-        pushChoise = button.textContent;
-        console.log('pushChoise:', pushChoise);
-        console.log(typeof pushChoise);
-        pushButtonLetter(pushChoise);
-        if (right == true) {
-            button.classList.add('letter_over_right');
-            right = 0;
-        }
-        else {
-            button.classList.add('letter_over_unright');
-            right = 0;
-        };
-    })
+    button.addEventListener('click', classLetter)
 })
 
 //////////////////////////////////////////////////////////////////////////////
